@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GoogleAdsPublishingAgent",
+    "description": "Validate, map, and publish Google Ads campaign content to the target advertising platform.",
+    "version": "v0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://openclaw.local"
+    }
+  ],
+  "paths": {
+    "/api/v1/google-ads/publish": {
+      "post": {
+        "operationId": "GoogleAdsPublish",
+        "description": "Validate and publish campaign setup and creative content to the advertising platform.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishingInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Publishing result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublishingOutput"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PublishingInput": {
+        "$ref": "./schemas/publishing-input.schema.json"
+      },
+      "PublishingOutput": {
+        "$ref": "./schemas/publishing-output.schema.json"
+      }
+    }
+  }
+}

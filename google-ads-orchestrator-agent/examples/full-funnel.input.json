@@ -1,0 +1,70 @@
+{
+  "taskType": "full_funnel",
+  "payload": {
+    "business": {
+      "campaignName": "Mother's Day Gift Box Campaign",
+      "theme": "Mother's Day",
+      "product": {
+        "name": "Skincare Gift Set",
+        "category": "Skincare",
+        "priceRange": "USD 39-129"
+      },
+      "market": {
+        "country": "United States",
+        "language": "en"
+      },
+      "timeRange": {
+        "startDate": "2026-04-20",
+        "endDate": "2026-05-12"
+      },
+      "budget": {
+        "currency": "USD",
+        "total": 20000
+      },
+      "valueProps": [
+        "20% off",
+        "Free shipping over $80",
+        "Free gift wrap",
+        "Delivery before Mother's Day"
+      ],
+      "landingPageUrl": "https://example.com/mothers-day-gift-sets"
+    },
+    "goal": {
+      "primaryObjective": "conversions",
+      "conversionAction": "purchase",
+      "kpiTargets": {
+        "targetROAS": 3
+      }
+    },
+    "account": {
+      "platform": "google_ads",
+      "customerId": "123-456-7890",
+      "currency": "USD",
+      "timezone": "America/Los_Angeles"
+    },
+    "publishMode": "validate_only",
+    "rawPerformanceData": {
+      "accountSummary": {
+        "spend": 7800,
+        "revenue": 4200,
+        "roas": 0.54
+      },
+      "campaignMetrics": [
+        {
+          "campaign": "Generic Mother's Day Search",
+          "impressions": 300000,
+          "clicks": 1400,
+          "ctr": 0.0047,
+          "cost": 4300,
+          "conversions": 18,
+          "cpa": 238.89
+        }
+      ],
+      "pageMetrics": {
+        "bounceRate": 0.62,
+        "avgTimeOnPageSeconds": 28,
+        "purchaseRate": 0.0139
+      }
+    }
+  }
+}

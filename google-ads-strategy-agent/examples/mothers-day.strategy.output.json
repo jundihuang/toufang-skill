@@ -1,0 +1,89 @@
+{
+  "goalSummary": {
+    "oneLine": "Drive Mother's Day gift set purchases in the United States with a conversion-focused campaign targeting ROAS efficiency.",
+    "context": {
+      "market": "United States / en",
+      "timeRange": "2026-04-20 to 2026-05-12",
+      "budget": "USD 20,000"
+    },
+    "priorities": [
+      "conversions",
+      "roas"
+    ]
+  },
+  "strategyPlan": {
+    "channelMix": [
+      "Search for high-intent gift and skincare queries",
+      "Performance Max for scaled conversion reach",
+      "Remarketing for site visitors and cart abandoners"
+    ],
+    "audienceKeywordDirections": [
+      "Segment search intent into generic gift, skincare gift set, premium gift, and last-minute delivery terms",
+      "Prioritize gifting audiences and recent site visitors"
+    ],
+    "budgetAllocation": [
+      "45% PMax / Shopping-like conversion coverage",
+      "35% Search generic + product intent",
+      "20% Remarketing and brand protection"
+    ],
+    "flightPlan": [
+      "Warmup: gift guide and category discovery",
+      "Peak: strongest offer and bestseller push",
+      "Final push: shipping urgency and last-minute messaging"
+    ]
+  },
+  "creativePack": {
+    "sellingPoints": [
+      "20% off Mother's Day gift sets",
+      "Free gift wrap",
+      "Delivery before Mother's Day",
+      "Premium skincare gifts she will love"
+    ],
+    "searchAds": {
+      "headlines": [
+        "Mother's Day Skincare Gifts",
+        "20% Off Gift Sets for Mom",
+        "Free Gift Wrap Available",
+        "Order Now for Mother's Day"
+      ],
+      "descriptions": [
+        "Shop elegant skincare gift sets with free gift wrap and Mother's Day delivery.",
+        "Find thoughtful gifts for mom with limited-time savings and premium presentation."
+      ]
+    },
+    "ctaOptions": [
+      "Shop Mother's Day Gifts",
+      "Find the Perfect Gift",
+      "Order Before May 6",
+      "Browse Best Sellers"
+    ]
+  },
+  "setupGuide": {
+    "campaignStructure": [
+      "Campaign 1: Brand Search",
+      "Campaign 2: Generic Mother's Day Search",
+      "Campaign 3: Product Intent Search",
+      "Campaign 4: Performance Max",
+      "Campaign 5: Remarketing"
+    ],
+    "trackingChecklist": [
+      "Purchase conversion",
+      "Add to cart",
+      "Begin checkout",
+      "GA4 revenue validation",
+      "UTM campaign naming"
+    ]
+  },
+  "launchActions": [
+    "Review search term quality within the first 3 days",
+    "Add negatives for low-value bargain traffic",
+    "Shift budget toward high-ROAS product intent groups",
+    "Swap in urgency-focused copy during final push"
+  ],
+  "assumptions": [
+    "Landing page supports Mother's Day merchandising and gift wrap messaging"
+  ],
+  "openQuestions": [
+    "Is there a product feed available for Performance Max or Shopping inventory?"
+  ]
+}

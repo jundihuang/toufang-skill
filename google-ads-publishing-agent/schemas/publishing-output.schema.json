@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/google-ads-publishing-agent/publishing-output.schema.json",
+  "title": "PublishingOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "validation", "plannedOperations"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["validated", "published", "partial_failure", "failed"]
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isReady"],
+      "properties": {
+        "isReady": { "type": "boolean" },
+        "missingFields": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "plannedOperations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entityType", "action", "name"],
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "enum": ["campaign", "ad_group", "asset_group", "ad", "keyword", "budget", "audience_signal"]
+          },
+          "action": {
+            "type": "string",
+            "enum": ["create", "update", "attach", "validate"]
+          },
+          "name": { "type": "string" }
+        }
+      }
+    },
+    "entityResults": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entityType", "name", "status"],
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "enum": ["campaign", "ad_group", "asset_group", "ad", "keyword", "budget", "audience_signal"]
+          },
+          "name": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["validated", "created", "updated", "skipped", "failed"]
+          },
+          "platformId": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "campaignCount": { "type": "integer" },
+        "adGroupCount": { "type": "integer" },
+        "assetGroupCount": { "type": "integer" },
+        "adCount": { "type": "integer" }
+      }
+    },
+    "nextActions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

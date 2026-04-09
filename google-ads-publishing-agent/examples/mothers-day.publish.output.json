@@ -1,0 +1,80 @@
+{
+  "status": "validated",
+  "validation": {
+    "isReady": false,
+    "missingFields": [
+      "Required image aspect variants for Performance Max",
+      "Logo assets for Performance Max",
+      "Remarketing audience definitions if remarketing campaign will be added"
+    ],
+    "warnings": [
+      "Search campaign objects are structurally valid",
+      "Performance Max asset coverage is incomplete for production publishing",
+      "Publish mode is validate_only, so no platform objects were created"
+    ]
+  },
+  "plannedOperations": [
+    {
+      "entityType": "campaign",
+      "action": "validate",
+      "name": "US_MD_Search_Generic"
+    },
+    {
+      "entityType": "ad_group",
+      "action": "validate",
+      "name": "GiftIntent_Generic"
+    },
+    {
+      "entityType": "ad",
+      "action": "validate",
+      "name": "Responsive Search Ad 1"
+    },
+    {
+      "entityType": "campaign",
+      "action": "validate",
+      "name": "US_MD_PMax_Main"
+    },
+    {
+      "entityType": "asset_group",
+      "action": "validate",
+      "name": "GiftSet_Urgency"
+    }
+  ],
+  "entityResults": [
+    {
+      "entityType": "campaign",
+      "name": "US_MD_Search_Generic",
+      "status": "validated",
+      "message": "Campaign structure is ready for create mode."
+    },
+    {
+      "entityType": "ad_group",
+      "name": "GiftIntent_Generic",
+      "status": "validated",
+      "message": "Keywords and RSA payload are valid."
+    },
+    {
+      "entityType": "campaign",
+      "name": "US_MD_PMax_Main",
+      "status": "skipped",
+      "message": "Blocked by incomplete asset requirements."
+    },
+    {
+      "entityType": "asset_group",
+      "name": "GiftSet_Urgency",
+      "status": "skipped",
+      "message": "Missing required image/logo variants for production-ready publishing."
+    }
+  ],
+  "summary": {
+    "campaignCount": 2,
+    "adGroupCount": 1,
+    "assetGroupCount": 1,
+    "adCount": 1
+  },
+  "nextActions": [
+    "Upload the remaining Performance Max asset variants",
+    "Attach logo assets",
+    "Upload all required image variants before switching to create mode"
+  ]
+}

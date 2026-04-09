@@ -8,7 +8,7 @@
   "properties": {
     "taskType": {
       "type": "string",
-      "enum": ["planning", "setup", "performance", "reporting", "full_funnel"]
+      "enum": ["strategy", "publishing", "optimization", "full_funnel"]
     },
     "payload": {
       "type": "object",

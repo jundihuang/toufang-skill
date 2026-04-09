@@ -1,0 +1,55 @@
+{
+  "timeWindow": {
+    "startDate": "2026-05-01",
+    "endDate": "2026-05-10"
+  },
+  "rawData": {
+    "accountSummary": {
+      "spend": 7800,
+      "revenue": 4200,
+      "roas": 0.54
+    },
+    "campaignMetrics": [
+      {
+        "campaign": "Generic Mother's Day Search",
+        "impressions": 300000,
+        "clicks": 1400,
+        "ctr": 0.0047,
+        "cost": 4300,
+        "conversions": 18,
+        "cpa": 238.89
+      },
+      {
+        "campaign": "Performance Max",
+        "impressions": 220000,
+        "clicks": 1200,
+        "ctr": 0.0055,
+        "cost": 3500,
+        "conversions": 20,
+        "cpa": 175
+      }
+    ],
+    "pageMetrics": {
+      "bounceRate": 0.62,
+      "avgTimeOnPageSeconds": 28,
+      "purchaseRate": 0.0139,
+      "notes": "Mobile page speed feels slow; promo is not visible above the fold."
+    }
+  },
+  "structureContext": {
+    "adTypes": [
+      "search",
+      "pmax"
+    ],
+    "bidding": "Max Conversions",
+    "keywordThemes": [
+      "gifts",
+      "skincare",
+      "beauty"
+    ]
+  },
+  "historicalBaseline": {
+    "targetCPA": 35,
+    "targetROAS": 3
+  }
+}

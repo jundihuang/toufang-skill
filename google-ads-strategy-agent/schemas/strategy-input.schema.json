@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/google-ads-strategy-agent/strategy-input.schema.json",
+  "title": "StrategyInput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["business", "goal"],
+  "properties": {
+    "business": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campaignName", "theme", "product", "market", "timeRange", "budget"],
+      "properties": {
+        "campaignName": { "type": "string" },
+        "theme": { "type": "string" },
+        "product": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "category"],
+          "properties": {
+            "name": { "type": "string" },
+            "category": { "type": "string" },
+            "priceRange": { "type": "string" }
+          }
+        },
+        "market": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["country", "language"],
+          "properties": {
+            "country": { "type": "string" },
+            "language": { "type": "string" }
+          }
+        },
+        "timeRange": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["startDate", "endDate"],
+          "properties": {
+            "startDate": { "type": "string" },
+            "endDate": { "type": "string" }
+          }
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["currency", "total"],
+          "properties": {
+            "currency": { "type": "string" },
+            "total": { "type": "number" }
+          }
+        },
+        "valueProps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "landingPageUrl": { "type": "string" },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primaryObjective", "conversionAction"],
+      "properties": {
+        "primaryObjective": { "type": "string" },
+        "conversionAction": { "type": "string" },
+        "kpiTargets": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

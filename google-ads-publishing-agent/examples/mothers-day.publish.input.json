@@ -1,0 +1,110 @@
+{
+  "platform": "google_ads",
+  "account": {
+    "customerId": "123-456-7890",
+    "currency": "USD",
+    "timezone": "America/Los_Angeles"
+  },
+  "publishMode": "validate_only",
+  "deploymentPlan": {
+    "campaigns": [
+      {
+        "name": "US_MD_Search_Generic",
+        "channelType": "search",
+        "status": "draft",
+        "budget": {
+          "amount": 350,
+          "period": "daily"
+        },
+        "bidding": {
+          "strategy": "maximize_conversions"
+        },
+        "locations": [
+          "United States"
+        ],
+        "languages": [
+          "en"
+        ],
+        "adGroups": [
+          {
+            "name": "GiftIntent_Generic",
+            "keywords": [
+              {
+                "text": "mother's day gifts",
+                "matchType": "phrase"
+              },
+              {
+                "text": "gifts for mom",
+                "matchType": "phrase"
+              }
+            ],
+            "negativeKeywords": [
+              "free",
+              "cheap",
+              "diy"
+            ],
+            "ads": [
+              {
+                "type": "responsive_search_ad",
+                "finalUrl": "https://example.com/mothers-day-gift-sets",
+                "headlines": [
+                  "Mother's Day Skincare Gifts",
+                  "20% Off Gift Sets for Mom",
+                  "Free Gift Wrap Available"
+                ],
+                "descriptions": [
+                  "Shop elegant skincare gift sets with free gift wrap and Mother's Day delivery.",
+                  "Find thoughtful gifts for mom with limited-time savings."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "US_MD_PMax_Main",
+        "channelType": "pmax",
+        "status": "draft",
+        "budget": {
+          "amount": 500,
+          "period": "daily"
+        },
+        "bidding": {
+          "strategy": "target_roas",
+          "targetRoas": 3
+        },
+        "locations": [
+          "United States"
+        ],
+        "languages": [
+          "en"
+        ],
+        "assetGroups": [
+          {
+            "name": "GiftSet_Urgency",
+            "finalUrl": "https://example.com/mothers-day-gift-sets",
+            "headlines": [
+              "Mother's Day Gift Sets",
+              "Order Before May 6"
+            ],
+            "longHeadlines": [
+              "Shop Premium Mother's Day Skincare Gift Sets with Free Gift Wrap"
+            ],
+            "descriptions": [
+              "Celebrate mom with elegant skincare gifts and on-time delivery."
+            ],
+            "images": [
+              "hero-gift-box.jpg",
+              "gift-wrap-closeup.jpg"
+            ],
+            "videos": [],
+            "audienceSignals": [
+              "Beauty In-Market",
+              "Gift Shoppers"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

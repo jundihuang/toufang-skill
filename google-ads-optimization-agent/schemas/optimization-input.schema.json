@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/google-ads-optimization-agent/optimization-input.schema.json",
+  "title": "OptimizationInput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["timeWindow", "rawData"],
+  "properties": {
+    "timeWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["startDate", "endDate"],
+      "properties": {
+        "startDate": { "type": "string" },
+        "endDate": { "type": "string" }
+      }
+    },
+    "rawData": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "structureContext": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "historicalBaseline": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,5 +1,8 @@
 # Google Ads Campaign Agent (OpenClaw Skill)
 
+> 当前状态：历史参考版单体 Skill。建议优先使用三段式主 Skill：
+> `google-ads-strategy-agent`、`google-ads-publishing-agent`、`google-ads-optimization-agent`。
+
 ## 这是什么？
 
 这是一个“Google 广告投放助手”。它不会替你去点 Google Ads 后台按钮，而是把你提供的信息整理成：

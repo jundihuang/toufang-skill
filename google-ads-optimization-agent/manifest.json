@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GoogleAdsOptimizationAgent",
+    "description": "Monitor, diagnose, optimize, and report on Google Ads performance using platform and analytics data.",
+    "version": "v0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://openclaw.local"
+    }
+  ],
+  "paths": {
+    "/api/v1/google-ads/optimize": {
+      "post": {
+        "operationId": "GoogleAdsOptimize",
+        "description": "Create performance snapshots, diagnostics, optimization actions, and reporting output from campaign data.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptimizationInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Optimization output.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OptimizationOutput"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OptimizationInput": {
+        "$ref": "./schemas/optimization-input.schema.json"
+      },
+      "OptimizationOutput": {
+        "$ref": "./schemas/optimization-output.schema.json"
+      }
+    }
+  }
+}

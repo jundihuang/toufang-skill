@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "GoogleAdsOrchestratorAgent",
-    "description": "Coordinate the full Google Ads workflow across brief, strategy, creative, setup, data, performance, and reporting skills.",
+    "description": "Coordinate the Google Ads workflow across strategy, publishing, and optimization skills.",
     "version": "v0.1.0"
   },
   "servers": [
@@ -14,7 +14,7 @@
     "/api/v1/google-ads/orchestrate": {
       "post": {
         "operationId": "GoogleAdsOrchestrate",
-        "description": "Route requests to the correct Google Ads skill sequence and return a stitched response.",
+        "description": "Route requests to the correct Google Ads stage skill and return a stitched response.",
         "requestBody": {
           "required": true,
           "content": {

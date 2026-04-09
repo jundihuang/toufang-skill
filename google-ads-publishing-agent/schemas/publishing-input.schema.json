@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/google-ads-publishing-agent/publishing-input.schema.json",
+  "title": "PublishingInput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["platform", "account", "publishMode", "deploymentPlan"],
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": ["google_ads"]
+    },
+    "account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["customerId", "currency", "timezone"],
+      "properties": {
+        "customerId": { "type": "string" },
+        "currency": { "type": "string" },
+        "timezone": { "type": "string" },
+        "loginCustomerId": { "type": "string" }
+      }
+    },
+    "publishMode": {
+      "type": "string",
+      "enum": ["validate_only", "create", "update"]
+    },
+    "strategyOutput": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deploymentPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campaigns"],
+      "properties": {
+        "campaigns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "channelType", "status", "budget", "bidding"],
+            "properties": {
+              "name": { "type": "string" },
+              "channelType": {
+                "type": "string",
+                "enum": ["search", "pmax", "display", "youtube", "shopping", "remarketing"]
+              },
+              "status": {
+                "type": "string",
+                "enum": ["enabled", "paused", "draft"]
+              },
+              "budget": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["amount", "period"],
+                "properties": {
+                  "amount": { "type": "number" },
+                  "period": {
+                    "type": "string",
+                    "enum": ["daily", "lifetime"]
+                  }
+                }
+              },
+              "bidding": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["strategy"],
+                "properties": {
+                  "strategy": {
+                    "type": "string",
+                    "enum": ["maximize_clicks", "maximize_conversions", "target_cpa", "target_roas", "manual_cpc"]
+                  },
+                  "targetCpa": { "type": "number" },
+                  "targetRoas": { "type": "number" }
+                }
+              },
+              "locations": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "languages": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "adGroups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "keywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["text", "matchType"],
+                        "properties": {
+                          "text": { "type": "string" },
+                          "matchType": {
+                            "type": "string",
+                            "enum": ["broad", "phrase", "exact"]
+                          }
+                        }
+                      }
+                    },
+                    "negativeKeywords": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "ads": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["type", "finalUrl", "headlines", "descriptions"],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": ["responsive_search_ad"]
+                          },
+                          "finalUrl": { "type": "string" },
+                          "headlines": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                          },
+                          "descriptions": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "assetGroups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name", "finalUrl"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "finalUrl": { "type": "string" },
+                    "headlines": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "longHeadlines": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "descriptions": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "videos": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "audienceSignals": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

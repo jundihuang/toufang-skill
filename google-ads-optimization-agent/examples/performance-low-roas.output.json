@@ -1,0 +1,96 @@
+{
+  "performanceSnapshot": {
+    "timeWindow": {
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-10"
+    },
+    "accountSummary": {
+      "spend": 7800,
+      "revenue": 4200,
+      "roas": 0.54
+    },
+    "dataQualityFlags": []
+  },
+  "diagnostics": {
+    "problemTypes": [
+      "click_quality",
+      "conversion",
+      "economics"
+    ],
+    "signals": [
+      "ROAS is far below the target of 3",
+      "Generic search is spending heavily with weak CTR and high CPA",
+      "Landing page signals suggest poor mobile conversion readiness"
+    ],
+    "hypotheses": [
+      {
+        "cause": "Generic gift traffic is too broad and low intent",
+        "whyLikely": "High spend and low efficiency in the generic search campaign suggest weak traffic quality",
+        "howToVerify": [
+          "Review search term report",
+          "Split generic gift terms from product-intent terms",
+          "Measure CPA and ROAS after narrowing match quality"
+        ]
+      },
+      {
+        "cause": "Landing page is not converting mobile traffic effectively",
+        "whyLikely": "High bounce rate and short time on page indicate the offer is not landing clearly",
+        "howToVerify": [
+          "Check mobile page speed",
+          "Move offer and delivery promise above the fold",
+          "Track conversion rate changes by device"
+        ]
+      }
+    ]
+  },
+  "optimizationActions": [
+    {
+      "priority": "P0",
+      "action": "Reduce spend on broad generic gift themes and add negatives for low-intent bargain searches",
+      "expectedImpact": "Improve traffic quality and lower CPA",
+      "howToValidate": [
+        "Compare search term CPA after 3 to 5 days",
+        "Check ROAS by keyword theme"
+      ],
+      "ownerHint": "ads"
+    },
+    {
+      "priority": "P0",
+      "action": "Update the landing page so the Mother's Day offer and shipping cutoff appear in the first screen on mobile",
+      "expectedImpact": "Increase conversion rate and reduce bounce rate",
+      "howToValidate": [
+        "Measure bounce rate and purchase rate by device",
+        "Compare conversion rate before and after page update"
+      ],
+      "ownerHint": "landing_page"
+    },
+    {
+      "priority": "P1",
+      "action": "Shift more budget toward product-intent and remarketing campaigns once those segments are isolated",
+      "expectedImpact": "Improve ROAS efficiency",
+      "howToValidate": [
+        "Compare campaign-level ROAS after reallocation"
+      ],
+      "ownerHint": "ads"
+    }
+  ],
+  "reporting": {
+    "summary": [
+      "Spend is high relative to revenue, with ROAS significantly under target",
+      "Generic search is the largest efficiency problem"
+    ],
+    "findings": [
+      "Traffic quality and landing page readiness are the two biggest constraints",
+      "Current bidding and keyword breadth are likely over-expanding low-intent traffic"
+    ],
+    "nextActions": [
+      "Tighten search term quality controls",
+      "Improve mobile landing page merchandising",
+      "Reallocate budget toward higher-intent segments"
+    ],
+    "learnings": [
+      "Generic seasonal gift traffic needs stronger filtering",
+      "Delivery and urgency messaging must be visible above the fold during peak season"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GoogleAdsStrategyAgent",
+    "description": "Generate goal analysis, campaign strategy, audience and keyword directions, creative output, and setup guidance for Google Ads.",
+    "version": "v0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://openclaw.local"
+    }
+  ],
+  "paths": {
+    "/api/v1/google-ads/strategy": {
+      "post": {
+        "operationId": "GoogleAdsStrategy",
+        "description": "Generate a full pre-launch Google Ads strategy package from business inputs.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StrategyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Structured strategy output.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StrategyOutput"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StrategyInput": {
+        "$ref": "./schemas/strategy-input.schema.json"
+      },
+      "StrategyOutput": {
+        "$ref": "./schemas/strategy-output.schema.json"
+      }
+    }
+  }
+}

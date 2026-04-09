@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openclaw.local/schemas/google-ads-strategy-agent/strategy-output.schema.json",
+  "title": "StrategyOutput",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["goalSummary", "strategyPlan", "creativePack", "setupGuide", "launchActions"],
+  "properties": {
+    "goalSummary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "strategyPlan": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "creativePack": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "setupGuide": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "launchActions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

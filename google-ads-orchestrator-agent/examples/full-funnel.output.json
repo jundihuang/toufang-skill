@@ -1,0 +1,46 @@
+{
+  "workflow": [
+    "strategy",
+    "publishing",
+    "optimization"
+  ],
+  "usedSkills": [
+    "google-ads-strategy-agent",
+    "google-ads-publishing-agent",
+    "google-ads-optimization-agent"
+  ],
+  "result": {
+    "strategy": {
+      "goalSummary": {
+        "oneLine": "Drive Mother's Day gift set purchases in the United States with a conversion-focused campaign targeting ROAS efficiency."
+      },
+      "keyOutputs": [
+        "Search + Performance Max + remarketing mix",
+        "Urgency-based Mother's Day creative direction",
+        "Campaign setup guidance and launch checklist"
+      ]
+    },
+    "publishing": {
+      "status": "validated",
+      "keyOutputs": [
+        "Campaign objects mapped for Search and Performance Max",
+        "Publishing blocked until full asset variants and audience definitions are provided"
+      ]
+    },
+    "optimization": {
+      "topIssues": [
+        "Broad generic gift traffic is lowering ROAS",
+        "Landing page mobile readiness is weak"
+      ],
+      "topActions": [
+        "Tighten search term quality",
+        "Improve above-the-fold offer visibility",
+        "Reallocate budget toward higher-intent segments"
+      ]
+    }
+  },
+  "openQuestions": [
+    "Is a product feed available for Performance Max or Shopping placements?",
+    "Are remarketing audiences already built in the target Google Ads account?"
+  ]
+}
