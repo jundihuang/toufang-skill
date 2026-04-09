@@ -189,6 +189,36 @@
 
 而不是已经 fully production-ready 的广告自动化系统。
 
+## OpenClaw 部署
+
+### 一键部署到 OpenClaw
+项目包含完整的 OpenClaw 配置，支持一键部署多智能体系统：
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/jundihuang/toufang-skill.git
+cd toufang-skill
+
+# 2. 设置 Discord 频道 ID（部署前需要在 Discord 中创建）
+export DISCORD_MAIN_CHANNEL_ID="你的主频道ID"
+export DISCORD_STRATEGY_CHANNEL_ID="策略子区ID"
+export DISCORD_OPTIMIZATION_CHANNEL_ID="优化子区ID"
+export DISCORD_PUBLISHING_CHANNEL_ID="发布子区ID"
+
+# 3. 运行部署脚本
+chmod +x openclaw-config/deploy-openclaw.sh
+./openclaw-config/deploy-openclaw.sh
+```
+
+### OpenClaw 配置特点
+- **完整的 4-agent 系统**：Orchestrator + Strategy + Optimization + Publishing
+- **自动配置**：一键完成所有 OpenClaw 配置
+- **Discord 集成**：自动绑定 Discord 频道和子区
+- **工作空间创建**：自动创建各 agent 的工作空间
+- **权限配置**：自动配置 agent-to-agent 调用权限
+
+详细部署指南见：[openclaw-config/README.md](openclaw-config/README.md)
+
 ## 建议的下一步
 
 如果继续往下做，优先级建议是：
