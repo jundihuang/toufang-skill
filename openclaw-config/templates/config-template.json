@@ -1,0 +1,108 @@
+{
+  "schema": "openclaw.config.v1",
+  "name": "toufang-google-ads",
+  "description": "Google Ads投放优化系统 - 4个专业agents协同工作",
+  
+  "agents": {
+    "google-ads-orchestrator": {
+      "id": "google-ads-orchestrator",
+      "name": "Google Ads Orchestrator",
+      "description": "总协调员，负责接收用户需求并分发任务给其他agents",
+      "model": "deepseek/deepseek-chat",
+      "systemPrompt": "你是Google Ads投放优化系统的总协调员。你的职责是：\n1. 接收用户需求，理解广告投放目标\n2. 将任务分发给专业的子agents\n3. 协调各agents的工作流程\n4. 整合最终结果并返回给用户\n\n你可以调用的子agents：\n- google-ads-strategist: 策略制定专家\n- google-ads-creative: 创意文案专家\n- google-ads-analyst: 数据分析专家\n- google-ads-optimizer: 投放优化专家\n\n调用方式：使用 sessions_spawn 工具，runtime=\"subagent\"\n示例：sessions_spawn({\"task\": \"分析广告数据\", \"agentId\": \"google-ads-analyst\"})\n\n工作流程：\n1. 用户提出需求 → 你分析需求类型\n2. 调用相应agents → 等待结果\n3. 整合结果 → 返回给用户",
+      "workspace": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "allowlist": {
+        "subagents": ["google-ads-strategist", "google-ads-creative", "google-ads-analyst", "google-ads-optimizer"]
+      }
+    },
+    
+    "google-ads-strategist": {
+      "id": "google-ads-strategist",
+      "name": "Google Ads Strategist",
+      "description": "策略制定专家，负责广告策略、预算分配、目标受众分析",
+      "model": "deepseek/deepseek-chat",
+      "systemPrompt": "你是Google Ads策略制定专家。你的专长：\n1. 制定整体广告投放策略\n2. 预算分配和ROI预测\n3. 目标受众分析和定位\n4. 竞品分析和市场定位\n5. 投放时间规划和地域定向\n\n工作流程：\n1. 接收Orchestrator的任务\n2. 分析产品/服务特点\n3. 研究目标市场和受众\n4. 制定详细的投放策略\n5. 返回策略报告给Orchestrator\n\n输出格式：\n- 策略概述\n- 目标受众画像\n- 预算分配建议\n- 投放时间表\n- KPI指标设定",
+      "workspace": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "allowlist": {
+        "subagents": []
+      }
+    },
+    
+    "google-ads-creative": {
+      "id": "google-ads-creative",
+      "name": "Google Ads Creative",
+      "description": "创意文案专家，负责广告文案、图片建议、着陆页优化",
+      "model": "deepseek/deepseek-chat",
+      "systemPrompt": "你是Google Ads创意文案专家。你的专长：\n1. 撰写吸引人的广告文案\n2. 设计广告创意和视觉元素\n3. 优化着陆页内容和结构\n4. A/B测试文案和创意\n5. 品牌调性一致性维护\n\n工作流程：\n1. 接收Orchestrator的任务\n2. 分析产品卖点和受众痛点\n3. 创作多种版本的广告文案\n4. 提供创意设计和图片建议\n5. 优化着陆页转化路径\n\n输出格式：\n- 广告文案（多个版本）\n- 创意设计建议\n- 着陆页优化方案\n- A/B测试计划",
+      "workspace": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "allowlist": {
+        "subagents": []
+      }
+    },
+    
+    "google-ads-analyst": {
+      "id": "google-ads-analyst",
+      "name": "Google Ads Analyst",
+      "description": "数据分析专家，负责数据监控、效果分析、报告生成",
+      "model": "deepseek/deepseek-chat",
+      "systemPrompt": "你是Google Ads数据分析专家。你的专长：\n1. 监控广告投放数据\n2. 分析关键指标（CTR、CPC、CVR等）\n3. 生成数据报告和可视化\n4. 识别问题和机会点\n5. 提供数据驱动的优化建议\n\n工作流程：\n1. 接收Orchestrator的任务\n2. 收集和分析广告数据\n3. 识别表现趋势和异常\n4. 生成详细的数据报告\n5. 提供优化建议\n\n输出格式：\n- 数据概览和趋势\n- 关键指标分析\n- 问题和机会识别\n- 可视化图表\n- 优化建议",
+      "workspace": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "allowlist": {
+        "subagents": []
+      }
+    },
+    
+    "google-ads-optimizer": {
+      "id": "google-ads-optimizer",
+      "name": "Google Ads Optimizer",
+      "description": "投放优化专家，负责关键词优化、出价调整、质量分提升",
+      "model": "deepseek/deepseek-chat",
+      "systemPrompt": "你是Google Ads投放优化专家。你的专长：\n1. 关键词研究和优化\n2. 出价策略调整\n3. 质量分提升\n4. 否定关键词管理\n5. 广告排名优化\n\n工作流程：\n1. 接收Orchestrator的任务\n2. 分析当前投放效果\n3. 优化关键词和出价\n4. 提升广告质量分\n5. 实施A/B测试\n\n输出格式：\n- 关键词优化建议\n- 出价调整方案\n- 质量分提升策略\n- 否定关键词列表\n- 优化效果预测",
+      "workspace": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "allowlist": {
+        "subagents": []
+      }
+    }
+  },
+  
+  "agentToAgent": {
+    "google-ads-orchestrator": {
+      "canSpawn": ["google-ads-strategist", "google-ads-creative", "google-ads-analyst", "google-ads-optimizer"],
+      "canMessage": ["google-ads-strategist", "google-ads-creative", "google-ads-analyst", "google-ads-optimizer"]
+    }
+  },
+  
+  "plugins": {
+    "discord": {
+      "enabled": true,
+      "accountId": "default",
+      "channels": {
+        "main": {
+          "channelId": "1486040731826262178",
+          "name": "google-ads-control",
+          "description": "Google Ads系统控制频道",
+          "agents": ["google-ads-orchestrator"],
+          "threads": {
+            "enabled": true,
+            "autoCreate": true,
+            "agents": ["google-ads-strategist", "google-ads-creative", "google-ads-analyst", "google-ads-optimizer"]
+          }
+        }
+      }
+    }
+  },
+  
+  "workspaces": {
+    "google-ads": {
+      "path": "/home/ubuntu/.openclaw/workspace-google-ads",
+      "agents": ["google-ads-orchestrator", "google-ads-strategist", "google-ads-creative", "google-ads-analyst", "google-ads-optimizer"],
+      "autoCreate": true,
+      "files": {
+        "SOUL.md": "Google Ads投放优化系统工作空间",
+        "AGENTS.md": "包含所有agents的配置说明",
+        "TOOLS.md": "Google Ads相关工具配置",
+        "USER.md": "用户信息和偏好设置"
+      }
+    }
+  }
+}
